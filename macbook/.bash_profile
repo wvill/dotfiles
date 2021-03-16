@@ -35,7 +35,7 @@ parse_git_branch() {
 }
 
 status_color() {
-    [ $? -eq 0 ] && printf "37;1" || printf "1;31"
+    [ $? -eq 0 ] && printf "\033[0" || printf "1;31"
 }
 
 export PS1="\r\n\[\033[0;36;1m\]\u\[\033[0;37m\]:\[\e[0;35m\]AIR\[\033[0;37m\]:\[\033[32;1m\]\h\[\033[0;37;1m\]:\[\033[33;1m\]\w\[\033[31;1m\]\$(parse_git_branch)\[\033[0m\]\r\n\[\033[\$(status_color)m\][\$(date +%T)] \# >\[\033[0m\]"
